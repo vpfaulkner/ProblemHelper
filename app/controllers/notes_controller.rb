@@ -5,7 +5,7 @@ class NotesController < ApplicationController
   end
 
   def update
-
+      this is a note 
   end
 
   def destroy
