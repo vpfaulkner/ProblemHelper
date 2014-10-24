@@ -3,11 +3,11 @@
 one:
   description: MyText
   tried_description: MyText
-  user_id: 1
+  user: one
   resolved: false
 
 two:
   description: MyText
   tried_description: MyText
-  user_id: 1
+  user: two
   resolved: false

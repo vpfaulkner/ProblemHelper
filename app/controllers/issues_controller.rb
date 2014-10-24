@@ -32,7 +32,7 @@ class IssuesController < ApplicationController
   private
 
   def issue_params
-
+    params.require(:issue).permit(:description, :tried_description, :user_id, :resolved)
   end
 
 end

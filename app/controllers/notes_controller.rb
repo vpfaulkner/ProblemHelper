@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  
+
   def create
 
   end
@@ -15,7 +15,7 @@ class NotesController < ApplicationController
   private
 
   def note_params
-
+    params.require(:note).permit(:text, :user_id, :issue_id)
   end
 
 end
