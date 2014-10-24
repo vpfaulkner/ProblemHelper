@@ -4,6 +4,9 @@ class NotesController < ApplicationController
 
   end
 
+  def update
+
+  end
 
   def destroy
 
@@ -12,7 +15,7 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:text, :user_id, :issue_id)
+    params.require(:note).permitxxx(:text, :user_id, :issue_id)
   end
 
 end
