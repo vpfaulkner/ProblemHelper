@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   def create
-
+    @note = Notes.new
   end
 
   def update
