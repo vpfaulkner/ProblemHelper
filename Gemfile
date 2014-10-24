@@ -48,6 +48,7 @@ group :development, :test do
   gem "shoulda"
   gem 'capybara'
   gem "selenium-webdriver"
+  gem 'launchy'
 end
 
 gem 'foundation-rails'
