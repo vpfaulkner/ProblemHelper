@@ -20,6 +20,7 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  timeout: 5000
 
 development:
   <<: *default
@@ -81,5 +82,3 @@ test:
 production:
   <<: *default
   database: ProblemHelper_production
-  username: ProblemHelper
-  password: <%= ENV['PROBLEMHELPER_DATABASE_PASSWORD'] %>

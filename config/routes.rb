@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
+  root 'issues#index'
+  resources :issues do
+    get 'index'
+    get '/:id' => 'issues#show', as: 'show'
+    resource :notes do
+    end
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
