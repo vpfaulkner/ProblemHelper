@@ -1,0 +1,41 @@
+{
+  "MiniTest": {
+    "coverage": {
+      "/Users/vancefaulkner/Desktop/Code/ProblemHelper/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/vancefaulkner/Desktop/Code/ProblemHelper/app/models/issue.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/vancefaulkner/Desktop/Code/ProblemHelper/app/models/note.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/vancefaulkner/Desktop/Code/ProblemHelper/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/vancefaulkner/Desktop/Code/ProblemHelper/app/helpers/issues_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/vancefaulkner/Desktop/Code/ProblemHelper/app/helpers/notes_helper.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1414174504
+  }
+}
