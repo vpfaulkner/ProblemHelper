@@ -44,13 +44,6 @@
         1,
         null
       ],
-      "/Users/vancefaulkner/Desktop/Code/ProblemHelper/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null
-      ],
       "/Users/vancefaulkner/Desktop/Code/ProblemHelper/app/controllers/issues_controller.rb": [
         1,
         1,
@@ -94,8 +87,15 @@
         null,
         null,
         null
+      ],
+      "/Users/vancefaulkner/Desktop/Code/ProblemHelper/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
       ]
     },
-    "timestamp": 1414251317
+    "timestamp": 1414252648
   }
 }

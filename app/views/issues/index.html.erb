@@ -5,7 +5,14 @@
 <table>
   <tbody>
       <tr>
-        <td><%= issue.description %></td>
+        <td>
+          <% if issue.description.split.size > 15 %>
+            <%= link_to issue.description.split[0...15].join(' '), issue_path(issue) %>
+            <%= "..." %>
+          <% else %>
+            <%= link_to issue.description, issue_path(issue) %>
+          <% end %>
+        </td>
       </tr>
       <tr>
         <td><%= issue.tried_description %></td>
