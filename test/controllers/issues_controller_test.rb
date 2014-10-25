@@ -19,9 +19,9 @@ class IssuesControllerTest < ActionController::TestCase
   context "GET #new" do
 
     should "create blank issue" do
+      sign_in users(:one)
       get :new
       assert assigns["issue"], "Should have a blank issue"
-      assert render_template("new")
     end
   end
 
