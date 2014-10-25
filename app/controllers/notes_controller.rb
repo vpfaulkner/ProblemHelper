@@ -1,11 +1,11 @@
 class NotesController < ApplicationController
 
   def create
-    @note = Notes.new
+
   end
 
   def update
-      this is a note 
+
   end
 
   def destroy
