@@ -5,5 +5,5 @@ class Issue < ActiveRecord::Base
   validates :description, presence: true
   validates :tried_description, presence: true
   validates :user_id, presence: true
-  validates :resolved, presence: true
+  validates :resolved, :inclusion => {:in => [true, false]}
 end

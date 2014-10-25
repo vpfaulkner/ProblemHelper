@@ -10,11 +10,15 @@ class IssuesController < ApplicationController
   end
 
   def create
-
+    @issue = current_user.issues.build(issue_params)
+    if @issue.save
+      redirect_to @issue, success: "Your issue has been created."
+    else
+      redirect_to new_issue_path
+    end
   end
 
   def show
-
   end
 
   def update
