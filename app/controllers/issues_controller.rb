@@ -31,7 +31,10 @@ class IssuesController < ApplicationController
   end
 
   def resolve
-
+    @issue = Issue.find(params[:issue_id])
+    @issue.update_attribute(:resolved, true)
+    @issue.save
+    redirect_to @issue, success: "Your issue has been resolved."
   end
 
   private

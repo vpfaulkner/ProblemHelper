@@ -7,6 +7,7 @@ require 'rails/test_help'
 require 'faker'
 require 'capybara/rails'
 require_relative 'support/test_password_helper'
+require 'database_cleaner'
 
 Capybara.server_port = 31337
 
@@ -26,3 +27,5 @@ class ActionDispatch::IntegrationTest
 end
 
 ActiveRecord::FixtureSet.context_class.send :include, TestPasswordHelper
+
+DatabaseCleaner.strategy = :truncation
