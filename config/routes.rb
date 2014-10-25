@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'issues#index'
   resources :issues do
+    post '/resolve' => 'issues#resolve', as: 'resolve'
     resource :notes do
     end
   end

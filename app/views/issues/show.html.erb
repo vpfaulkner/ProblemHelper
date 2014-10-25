@@ -1,0 +1,16 @@
+<br>
+<h3>The problem:</h3>
+<p><%= @issue.description %></p>
+<h3>What you've tried:</h3>
+<p><%= @issue.tried_description %></p>
+<p><%= @issue.user.email%></p>
+<% if @issue.resolved == false %>
+  <% status = '<i class="fa fa-exclamation-triangle"></i>&nbsp'.html_safe + " Unresolved"%>
+<% else %>
+  <% status = '<i class="fa fa-check"></i>&nbsp'.html_safe + " Resolved"%>
+<% end %>
+<p>Status:&nbsp&nbsp&nbsp&nbsp<%= status %></p>
+#ADD OWNER LOGIC
+<%= link_to "Resolve", issue_resolve_path(@issue.id), method: :post, class: :button %>
+
+<h3>Notes:<h3>

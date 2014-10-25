@@ -1,5 +1,5 @@
 class IssuesController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
 
@@ -10,11 +10,16 @@ class IssuesController < ApplicationController
   end
 
   def create
-
+    @issue = current_user.issues.build(issue_params)
+    if @issue.save
+      redirect_to @issue, success: "Your issue has been created."
+    else
+      redirect_to new_issue_path
+    end
   end
 
   def show
-
+    @issue = Issue.find(params[:id])
   end
 
   def update
@@ -26,7 +31,10 @@ class IssuesController < ApplicationController
   end
 
   def resolve
-
+    @issue = Issue.find(params[:issue_id])
+    @issue.update_attribute(:resolved, true)
+    @issue.save
+    redirect_to @issue, success: "Your issue has been resolved."
   end
 
   private

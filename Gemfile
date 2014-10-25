@@ -49,6 +49,7 @@ group :development, :test do
   gem 'capybara'
   gem "selenium-webdriver"
   gem 'launchy'
+  gem 'database_cleaner'
 end
 
 gem 'foundation-rails'
