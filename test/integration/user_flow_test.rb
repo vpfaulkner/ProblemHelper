@@ -42,12 +42,22 @@ class UserFlowTest < ActionDispatch::IntegrationTest
     end
 
   context "Individual Issues Page" do
-
+    setup do
+      visit issue_path(issues(:three))
+    end
     should "Be able to see issue description" do
-      
+      assert page.has_content?(issues(:three).description), "Should see description"
+      assert page.has_content?(issues(:three).tried_description), "Should see description"
+      assert page.has_content?(issues(:three).user.email), "Should see description"
+    end
+
+    should "See resolved check when resolved" do
+      # assert page.has_css?('i'), "Should see description"
     end
 
   end
+
+
 
     context "when logged in" do
 

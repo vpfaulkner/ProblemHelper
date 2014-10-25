@@ -1,0 +1,13 @@
+#Vance will put in issue information
+<br>
+<h3><%= @issue.description %></h3>
+<p><%= @issue.tried_description %></p>
+<p><%= @issue.user.email%></p>
+<% if @issue.resolved == false %>
+  <% status = '<i class="fa fa-exclamation-triangle"></i>'.html_safe + " Unresolved"%>
+<% else %>
+  <% status = '<i class="fa fa-check"></i>'.html_safe + " Resolved"%>
+<% end %>
+<p>Status: <%= status %></p>
+
+<h3>Notes:<h3>

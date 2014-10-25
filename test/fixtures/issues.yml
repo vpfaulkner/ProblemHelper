@@ -4,10 +4,16 @@ one:
   description: MyText
   tried_description: MyText
   user: one
-  resolved: false
+  resolved: true
 
 two:
   description: If pattern is a String, then its contents are used as the delimiter when splitting str. If pattern is a single space, str is split on whitespace, with leading whitespace and runs of contiguous whitespace characters ignored. If pattern is a Regexp, str is divided where the pattern matches. Whenever the pattern matches a zero-length string, str is split into individual characters. If pattern contains groups, the respective matches will be returned in the array as well.
   tried_description: MyText
   user: two
   resolved: false
+
+three:
+  description: If pattern is a String, then its contents are used as the delimiter when splitting str. If pattern is a single space, str is split on whitespace, with leading whitespace and runs of contiguous whitespace characters ignored. If pattern is a Regexp, str is divided where the pattern matches. Whenever the pattern matches a zero-length string, str is split into individual characters. If pattern contains groups, the respective matches will be returned in the array as well.
+  tried_description: MyText
+  user: two
+  resolved: true
