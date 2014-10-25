@@ -1,12 +1,12 @@
 class IssuesController < ApplicationController
-
+  before_action :authenticate_user!, only: [:create]
 
   def index
 
   end
 
   def new
-
+    @issue = Issue.new
   end
 
   def create
