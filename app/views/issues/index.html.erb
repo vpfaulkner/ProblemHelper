@@ -1,6 +1,7 @@
 <br>
 <h3>Issues</h3>
-<% @issues = Issue.all.sort_by { |i| i.created_at } %>
+<% @issues = Issue.where(:resolved => false) %>
+<% @issues = @issues.sort_by { |i| i.created_at } %>
 <% @issues.each do |issue| %>
 <table>
   <tbody>
@@ -19,9 +20,6 @@
       </tr>
       <tr>
         <td><%= issue.user.email %></td>
-      </tr>
-      <tr>
-        <td><%= issue.resolved %></td>
       </tr>
       <tr>
         <td><%= issue.created_at %></td>
