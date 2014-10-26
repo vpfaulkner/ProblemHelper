@@ -14,7 +14,7 @@
         <td><%= @issue.user.email%></td>
       </tr>
       <tr>
-        <td>Issue status:</td>
+        <td>Issue status:<%= @issue.resolved %></td>
         <td>
           <% if @issue.resolved == false %>
             <% status = '<i class="fa fa-exclamation-triangle"></i>&nbsp'.html_safe + " Unresolved"%>
