@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'issues#index'
   resources :issues do
     post '/resolve' => 'issues#resolve', as: 'resolve'
+    get '/resolve' => 'issues#resolve', as: 'resolve_get'
     resource :notes do
     end
   end

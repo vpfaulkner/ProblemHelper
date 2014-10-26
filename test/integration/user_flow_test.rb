@@ -2,6 +2,14 @@ require 'test_helper'
 
 class UserFlowTest < ActionDispatch::IntegrationTest
   context "Issues Index" do
+    setup do
+      DatabaseCleaner.clean
+    end
+
+    teardown do
+      # DatabaseCleaner.clean
+    end
+
 
     should "see login in the navbar" do
       visit root_path
@@ -12,14 +20,15 @@ class UserFlowTest < ActionDispatch::IntegrationTest
     end
 
     should "be able to login" do
-      DatabaseCleaner.start
+      # Capybara.current_driver = :selenium
       visit new_user_session_path
-      fill_in "Email", with: users(:one).email
+      fill_in "Email", with: "tester1@stack.com" #users(:one).email
       fill_in "Password", with: default_password
+      binding.pry
       click_button "Log in"
+      binding.pry
       assert page.has_content?("Logout"), "Should be logged in and have logout link"
       click_link("Logout")
-      DatabaseCleaner.clean
     end
 
     # should "be able to navigate to an individual problem page" do

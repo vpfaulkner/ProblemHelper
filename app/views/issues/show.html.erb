@@ -10,7 +10,6 @@
   <% status = '<i class="fa fa-check"></i>&nbsp'.html_safe + " Resolved"%>
 <% end %>
 <p>Status:&nbsp&nbsp&nbsp&nbsp<%= status %></p>
-#ADD OWNER LOGIC
 <%= link_to "Resolve", issue_resolve_path(@issue.id), method: :post, class: :button %>
 
 <h3>Notes:<h3>
