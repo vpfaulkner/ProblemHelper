@@ -1,15 +1,33 @@
-<br>
-<h3>The problem:</h3>
-<p><%= @issue.description %></p>
-<h3>What you've tried:</h3>
-<p><%= @issue.tried_description %></p>
-<p><%= @issue.user.email%></p>
-<% if @issue.resolved == false %>
-  <% status = '<i class="fa fa-exclamation-triangle"></i>&nbsp'.html_safe + " Unresolved"%>
-<% else %>
-  <% status = '<i class="fa fa-check"></i>&nbsp'.html_safe + " Resolved"%>
-<% end %>
-<p>Status:&nbsp&nbsp&nbsp&nbsp<%= status %></p>
+<h3>Your Issue</h3>
+<table>
+  <tbody>
+      <tr>
+        <td>What's wrong?</td>
+        <td><%= @issue.description %></td>
+      </tr>
+      <tr>
+        <td>What have you tried?</td>
+        <td><%= @issue.tried_description %></td>
+      </tr>
+      <tr>
+        <td>Who are you?</td>
+        <td><%= @issue.user.email%></td>
+      </tr>
+      <tr>
+        <td>Issue status:</td>
+        <td>
+          <% if @issue.resolved == false %>
+            <% status = '<i class="fa fa-exclamation-triangle"></i>&nbsp'.html_safe + " Unresolved"%>
+          <% else %>
+            <% status = '<i class="fa fa-check"></i>&nbsp'.html_safe + " Resolved"%>
+          <% end %>
+          <%= status %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 <%= link_to "Resolve", issue_resolve_path(@issue.id), method: :post, class: :button %>
+
+
 
 <h3>Notes:<h3>

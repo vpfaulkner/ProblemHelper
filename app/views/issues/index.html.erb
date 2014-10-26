@@ -1,4 +1,3 @@
-<br>
 <h3>Issues</h3>
 <% @issues = Issue.where(:resolved => false) %>
 <% @issues = @issues.sort_by { |i| i.created_at } %>
@@ -6,6 +5,7 @@
 <table>
   <tbody>
       <tr>
+        <td>What's wrong?</td>
         <td>
           <% if issue.description.split.size > 15 %>
             <%= link_to issue.description.split[0...15].join(' '), issue_path(issue) %>
@@ -16,13 +16,16 @@
         </td>
       </tr>
       <tr>
+        <td>What have you tried?</td>
         <td><%= issue.tried_description %></td>
       </tr>
       <tr>
+        <td>Who are you?</td>
         <td><%= issue.user.email %></td>
       </tr>
       <tr>
-        <td><%= issue.created_at %></td>
+        <td>When was this issue created?</td>
+        <td><%= issue.created_at.strftime("%d %b. %Y") %></td>
       </tr>
     </tbody>
   </table>
