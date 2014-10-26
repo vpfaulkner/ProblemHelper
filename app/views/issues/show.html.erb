@@ -31,7 +31,7 @@
 
 
 <h3>Notes:<h3>
-  <%= form_for :notes do |f| %>
+  <%= form_for :note, url: notes_path do |f| %>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>

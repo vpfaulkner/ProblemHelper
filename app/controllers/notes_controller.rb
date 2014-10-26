@@ -9,7 +9,7 @@ before_action :set_note, only: [:show, :edit, :update, :destroy]
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to issue_path(@issue), success: 'Note was successfully created.' }
+        format.html { redirect_to issue_path(@issue), success: 'Your note was successfully created.' }
 #        format.json { render :show, status :created, location: @note }
       else
         format.html { render :new }
@@ -21,7 +21,7 @@ before_action :set_note, only: [:show, :edit, :update, :destroy]
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to @note, success: 'Note was successfully updated.' }
+        format.html { redirect_to @note, success: 'Your note was successfully updated.' }
 #        format.json { render :show, status :ok, location: @note }
       else
         format.html { render :edit }
