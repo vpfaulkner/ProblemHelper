@@ -1,15 +1,20 @@
 class NotesController < ApplicationController
 before_action :authenticate
+before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def create
     @issue = Issue.find(params[:issue_id])
     @note = @issue.notes.build(notes_params)
     @note.user = current_user
 
-    if @note.save
-      redirect_to @issue
-    else
-      render "issues/show"
+    respond_to do |format|
+      if @note.save
+        format.html { redirect_to issue_path(@issue), notice: 'Note was successfully created.' }
+#        format.json { render :show, status :created, location: @note }
+      else
+        format.html { render :new }
+#        format.json { render json: @note.errors, status: ok}
+      end
     end
   end
 
