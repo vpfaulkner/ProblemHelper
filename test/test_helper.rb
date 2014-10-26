@@ -27,5 +27,4 @@ class ActionDispatch::IntegrationTest
 end
 
 ActiveRecord::FixtureSet.context_class.send :include, TestPasswordHelper
-
 DatabaseCleaner.strategy = :truncation
