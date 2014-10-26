@@ -1,10 +1,10 @@
 class NotesController < ApplicationController
-before_action :authenticate
+before_action :authenticate_user!
 before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def create
     @issue = Issue.find(params[:issue_id])
-    @note = @issue.notes.build(notes_params)
+    @note = @issue.notes.build(note_params)
     @note.user = current_user
 
     respond_to do |format|
