@@ -37,7 +37,7 @@ class IssuesController < ApplicationController
       @issue.save
       redirect_to @issue, success: "Your issue has been resolved."
     else
-      redirect_to @issue, error: "You must be the issue owner to resolve"
+      redirect_to @issue, alert: "You must be the issue owner to resolve"
     # ADD ELSE FLASH
     end
   end
