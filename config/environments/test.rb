@@ -21,7 +21,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Raise exceptions instead of rendering exception templates.
-  config.action_dispatch.show_exceptions = false
+  config.action_dispatch.show_exceptions = true
 
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
@@ -38,6 +38,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   # config.use_transactional_fixtures = true
 
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
