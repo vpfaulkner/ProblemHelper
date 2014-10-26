@@ -4,5 +4,5 @@
   <%= f.input :tried_description, label: 'What have you tried?' %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.hidden_field :resolved, :value => false %>
-  <%= f.button :submit %>
+  <%= f.button :submit, "Create Issue", class: "button" %>
 <% end %>
