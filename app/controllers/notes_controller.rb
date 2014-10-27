@@ -11,6 +11,7 @@ before_action :set_note, only: [:show, :edit, :update, :destroy]
       if @note.save
         format.html { redirect_to issue_path(@issue), success: 'Your note was successfully created.' }
 #        format.json { render :show, status :created, location: @note }
+        UserMailer.issue_note_email(@note).deliver
       else
         format.html { render :new }
 #        format.json { render json: @note.errors, status: ok}

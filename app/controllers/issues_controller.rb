@@ -13,6 +13,7 @@ class IssuesController < ApplicationController
     @issue = current_user.issues.build(issue_params)
     if @issue.save
       redirect_to @issue, success: "Your issue has been created."
+      UserMailer.new_problem_email(current_user, @issue).deliver
     else
       redirect_to new_issue_path
     end

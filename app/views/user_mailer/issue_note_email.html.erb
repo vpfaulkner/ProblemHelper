@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>A note has been added to your issue</h1>
+    <p>
+      Note Text: <%= @note.text %><br>
+    </p>
+    <p>
+      Note Owner: <%= @note.user.email %><br>
+    </p>
+    <p>
+      Your problem: <%= link_to "Issue", issue_path(@issue) %><br>
+    </p>
+    <p>
+      You will recieve email updates as new notes are added <%= @url %>.
+    </p>
+  </body>
+</html>
