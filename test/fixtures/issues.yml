@@ -17,3 +17,9 @@ three:
   tried_description: MyText
   user: two
   resolved: true
+
+four:
+  description: I’d use database cleaner to truncate my tables after/before each selenium specs but definitely not for every non-selenium specs like model and controller spec. What about using database cleaner’s transaction strategy for those?
+  tried_description: MyText
+  user: one
+  resolved: false

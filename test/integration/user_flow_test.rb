@@ -30,13 +30,12 @@ class UserFlowTest < ActionDispatch::IntegrationTest
     end
 
     should "be able to navigate to an individual problem page" do
-      Capybara.current_driver = :selenium
       visit root_path
-      abbrev_description = issues(:one).description.split[0...15].join(' ')
+      abbrev_description = issues(:four).description.split[0...15].join(' ')
 
       assert page.has_content?(abbrev_description), "Should see abbreviated description"
       click_link(abbrev_description)
-      assert_equal current_path, issue_path(issues(:one)), "Should be able to click to issue page"
+      assert_equal current_path, issue_path(issues(:four)), "Should be able to click to issue page"
     end
 
     should "be able to navigate to new issue page" do
