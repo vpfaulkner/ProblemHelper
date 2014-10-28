@@ -21,23 +21,12 @@
 <h4>Notes</h4>
 <% @notes = @issue.notes %>
 <% @notes = @notes.sort_by { |i| i.created_at } %>
-<% @notes.each do |note| %>
-<table>
-  <tbody>
-      <tr>
-        <td><%= note.text %></td>
-      </tr>
-      <tr>
-        <td> - From <%= note.user.email %> on <%= note.created_at.strftime("%b. %d, %Y") %></td>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-<% end %>
-
+<div id="notes">
+  <%= render @notes %>
+</div>
 
 <h3>Add Note<h3>
-  <%= form_for :note, url: issue_notes_path(@issue.id) do |f| %>
+  <%= form_for :note, url: issue_notes_path(@issue.id), remote: true do |f| %>
     <p>
       <%= f.label :text %><br>
       <%= f.text_area :text %>
