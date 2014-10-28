@@ -34,9 +34,18 @@ class IssuesController < ApplicationController
   def resolve
     @issue = Issue.find(params[:issue_id])
     if current_user && current_user.id == @issue.user.id
-      @issue.update_attribute(:resolved, true)
-      @issue.save
-      redirect_to @issue, success: "Your issue has been resolved."
+      respond_to do |format|
+        format.html do
+          @issue.update_attribute(:resolved, true)
+          @issue.save
+          redirect_to @issue, success: "Your issue has been resolved."
+        end
+        format.js do
+          @issue.update_attribute(:resolved, true)
+          @issue.save
+          render "/issues/resolve", status: :created
+        end
+      end
     else
       redirect_to @issue, alert: "You must be the issue owner to resolve"
     # ADD ELSE FLASH

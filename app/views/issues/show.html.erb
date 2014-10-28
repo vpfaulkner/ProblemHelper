@@ -13,20 +13,10 @@
         <td>Who are you?</td>
         <td><%= @issue.user.email%></td>
       </tr>
-      <tr>
-        <td>Issue status:<%= @issue.resolved %></td>
-        <td>
-          <% if @issue.resolved == false %>
-            <% status = '<i class="fa fa-exclamation-triangle"></i>&nbsp'.html_safe + " Unresolved"%>
-          <% else %>
-            <% status = '<i class="fa fa-check"></i>&nbsp'.html_safe + " Resolved"%>
-          <% end %>
-          <%= status %>
-        </td>
-      </tr>
+      <%= render "issues/resolve" %>
     </tbody>
   </table>
-<%= link_to "Resolve", issue_resolve_path(@issue.id), method: :post, class: :button %>
+<%= link_to "Resolve", issue_resolve_path(@issue.id), remote: true, method: :post, class: :button %>
 
 <h4>Notes</h4>
 <% @notes = @issue.notes %>
