@@ -13,7 +13,10 @@
         <td>Who are you?</td>
         <td><%= @issue.user.email%></td>
       </tr>
-      <%= render "issues/resolve" %>
+      <tr>
+        <td>Issue status:</td>
+        <%= render "issues/resolve" %>
+      </tr>
     </tbody>
   </table>
 <%= link_to "Resolve", issue_resolve_path(@issue.id), remote: true, method: :post, class: :button %>

@@ -2,20 +2,28 @@ class IssuesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-
-  end
-
-  def new
     @issue = Issue.new
   end
 
   def create
     @issue = current_user.issues.build(issue_params)
-    if @issue.save
-      redirect_to @issue, success: "Your issue has been created."
-      UserMailer.new_problem_email(current_user, @issue).deliver
-    else
-      redirect_to new_issue_path
+    respond_to do |format|
+      format.html do
+        if @issue.save
+          redirect_to @issue, success: "Your issue has been created."
+          UserMailer.new_problem_email(current_user, @issue).deliver
+        else
+          redirect_to new_issue_path
+        end
+      end
+      format.js do
+        if @issue.save
+          render "/issues/new", status: :created
+          UserMailer.new_problem_email(current_user, @issue).deliver
+        else
+          redirect_to new_issue_path
+        end
+      end
     end
   end
 

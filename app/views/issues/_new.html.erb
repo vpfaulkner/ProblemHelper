@@ -1,0 +1,8 @@
+<h3>Submit your Issue</h3>
+<%= simple_form_for @issue, remote: true do |f| %>
+  <%= f.input :description, label: 'What is your issue?' %>
+  <%= f.input :tried_description, label: 'What have you tried?' %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :resolved, :value => false %>
+  <%= f.button :submit, "Create Issue", class: "button" %>
+<% end %>

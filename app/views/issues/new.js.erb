@@ -1,0 +1,4 @@
+$("#issues").prepend("<%= j render(@issue) %>");
+$("#<%= dom_id(@issue) %>").find('*').effect("highlight", {}, 1500);
+$(".issue_description textarea").val("")
+$(".issue_tried_description textarea").val("")
