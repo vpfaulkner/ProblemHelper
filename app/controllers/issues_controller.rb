@@ -11,7 +11,7 @@ class IssuesController < ApplicationController
       format.html do
         if @issue.save
           redirect_to @issue, success: "Your issue has been created."
-          UserMailer.new_problem_email(current_user, @issue).deliver
+          # UserMailer.new_problem_email(current_user, @issue).deliver
         else
           redirect_to new_issue_path
         end
@@ -19,7 +19,7 @@ class IssuesController < ApplicationController
       format.js do
         if @issue.save
           render "/issues/new", status: :created
-          UserMailer.new_problem_email(current_user, @issue).deliver
+          # UserMailer.new_problem_email(current_user, @issue).deliver
         else
           redirect_to new_issue_path
         end

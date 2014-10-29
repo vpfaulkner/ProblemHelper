@@ -14,7 +14,7 @@ before_action :set_note, only: [:show, :edit, :update, :destroy]
         format.js do
           render "/notes/create", status: :created
         end
-        UserMailer.issue_note_email(@note).deliver
+        # UserMailer.issue_note_email(@note).deliver
       else
         format.html { render :new }
 #        format.json { render json: @note.errors, status: ok}
