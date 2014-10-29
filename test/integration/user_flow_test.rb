@@ -38,17 +38,6 @@ class UserFlowTest < ActionDispatch::IntegrationTest
       assert_equal current_path, issue_path(issues(:four)), "Should be able to click to issue page"
     end
 
-    should "be able to navigate to new issue page" do
-      visit new_user_session_path
-      fill_in "Email", with: users(:one).email
-      fill_in "Password", with: default_password
-      click_button "Log in"
-      visit root_path
-      click_link("Submit an Issue")
-
-      assert_equal current_path, new_issue_path, "Should be able to navigate to new issue path"
-    end
-
   end
 
 end

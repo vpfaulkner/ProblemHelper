@@ -1,4 +1,4 @@
-<%= render "issues/new" %>
+<%= render "issues/new" if user_signed_in? %>
 <h3>Issues</h3>
 <% @issues = Issue.where(:resolved => false) %>
 <% @issues = @issues.sort_by { |i| i.created_at }.reverse! %>

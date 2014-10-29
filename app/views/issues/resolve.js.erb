@@ -1,2 +1,6 @@
 $(".resolved_section").replaceWith("<%= j render 'issues/resolve' %>");
 $(".resolved_section").effect("highlight", {}, 1500);
+
+$("#<%= dom_id(@issue) %>").fadeOut('slow', function(){
+        $(this).remove();
+    });

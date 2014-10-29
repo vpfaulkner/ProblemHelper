@@ -16,15 +16,6 @@ class IssuesControllerTest < ActionController::TestCase
      :user_id => users(:one).id} }
   end
 
-  context "GET #new" do
-
-    should "create blank issue" do
-      sign_in users(:one)
-      get :new
-      assert assigns["issue"], "Should have a blank issue"
-    end
-  end
-
   context "POST #create" do
 
     context "When not logged in" do

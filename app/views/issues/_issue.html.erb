@@ -26,5 +26,7 @@
       </tr>
     </tbody>
   </table>
+  <%= link_to "Resolve", issue_resolve_path(issue.id), remote: true, method: :post, class: :button %>
+
   <br>
 </div>
